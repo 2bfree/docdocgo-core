@@ -119,19 +119,19 @@ elif not IS_AZURE and not DEFAULT_OPENAI_API_KEY:
 #     )
 
 # Verify the validity of the db path
-if not os.getenv("USE_CHROMA_VIA_HTTP") and not os.path.isdir(VECTORDB_DIR):
-    try:
-        abs_path = os.path.abspath(VECTORDB_DIR)
-    except Exception:
-        abs_path = "INVALID PATH"
-    raise ValueError(
-        "You have not specified a valid directory for the vector database. "
-        "Please set the VECTORDB_DIR environment variable in .env, as shown in .env.example. "
-        "Alternatively, if you have a Chroma DB server running, you can set the "
-        "USE_CHROMA_VIA_HTTP environment variable to any non-empty value. "
-        f"\n\nThe path you have specified is: {VECTORDB_DIR}.\n"
-        f"The absolute path resolves to: {abs_path}."
-    )
+# if not os.getenv("USE_CHROMA_VIA_HTTP") and not os.path.isdir(VECTORDB_DIR):
+#     try:
+#         abs_path = os.path.abspath(VECTORDB_DIR)
+#     except Exception:
+#         abs_path = "INVALID PATH"
+#     raise ValueError(
+#         "You have not specified a valid directory for the vector database. "
+#         "Please set the VECTORDB_DIR environment variable in .env, as shown in .env.example. "
+#         "Alternatively, if you have a Chroma DB server running, you can set the "
+#         "USE_CHROMA_VIA_HTTP environment variable to any non-empty value. "
+#         f"\n\nThe path you have specified is: {VECTORDB_DIR}.\n"
+#         f"The absolute path resolves to: {abs_path}."
+#     )
 
 
 is_env_loaded = True
