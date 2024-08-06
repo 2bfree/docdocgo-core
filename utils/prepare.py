@@ -106,17 +106,17 @@ elif not IS_AZURE and not DEFAULT_OPENAI_API_KEY:
     DEFAULT_OPENAI_API_KEY = DUMMY_OPENAI_API_KEY_PLACEHOLDER
     # TODO investigate the behavior when this happens
 
-if not os.getenv("SERPER_API_KEY") and not os.getenv("IGNORE_LACK_OF_SERPER_API_KEY"):
-    raise ValueError(
-        "You have not set the SERPER_API_KEY environment variable, "
-        "which is necessary for the Internet search functionality."
-        "Pease set the SERPER_API_KEY environment variable to your Google Serper API key, "
-        "which you can get for free, with no credit card, at https://serper.dev. "
-        "This free key will allow you to make about 1250 searches until payment is required.\n\n"
-        "If you want to supress this error, set the IGNORE_LACK_OF_SERPER_API_KEY environment "
-        "variable to any non-empty value. You can then use features that do not require the "
-        "Internet search functionality."
-    )
+# if not os.getenv("SERPER_API_KEY") and not os.getenv("IGNORE_LACK_OF_SERPER_API_KEY"):
+#     raise ValueError(
+#         "You have not set the SERPER_API_KEY environment variable, "
+#         "which is necessary for the Internet search functionality."
+#         "Pease set the SERPER_API_KEY environment variable to your Google Serper API key, "
+#         "which you can get for free, with no credit card, at https://serper.dev. "
+#         "This free key will allow you to make about 1250 searches until payment is required.\n\n"
+#         "If you want to supress this error, set the IGNORE_LACK_OF_SERPER_API_KEY environment "
+#         "variable to any non-empty value. You can then use features that do not require the "
+#         "Internet search functionality."
+#     )
 
 # Verify the validity of the db path
 if not os.getenv("USE_CHROMA_VIA_HTTP") and not os.path.isdir(VECTORDB_DIR):
